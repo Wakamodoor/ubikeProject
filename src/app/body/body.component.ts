@@ -32,12 +32,25 @@ export class BodyComponent implements OnInit {
 
   //sort
 
-  re = /[\u4e00-\u9fa5]/g;
+  re = /[\u4e00-\u9fa5]$/;
 
-  check(district: string) {
+  checkDistrict(district: string) {
     if(this.re.test(district)) {
-      console.log(district)
+      // console.log(district)
       this.sortByArea(district)
+    }
+  }
+
+  checkSearchText(searchText: string) {
+    if(this.re.test(searchText)) {
+      // console.log(searchText)
+      this.sortByType(searchText)
+    }
+  }
+
+  emptyText(len: number) {
+    if(len === 0) {
+      this.refresh()
     }
   }
 
@@ -48,7 +61,6 @@ export class BodyComponent implements OnInit {
   }
 
   sortByType = (searchText: string) => {
-    console.log(searchText)
     this.refresh()
     this.tempList = []
     if(searchText === "") {
@@ -65,7 +77,6 @@ export class BodyComponent implements OnInit {
   }
 
   refresh() {
-    console.log("nono")
     this.newData = JSON.parse(JSON.stringify(this.orig_data));
   }
 

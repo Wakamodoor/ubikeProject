@@ -7,10 +7,10 @@
       <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>選擇行政區</mat-label>
         <input type="text" #district
-              (input)='check(district.value)'
+              (input)='checkDistrict(district.value)'
               (keyup.enter)="sortByArea(district.value)"
               (keyup.Escape)="refresh(); district.value='' "
-              [class.refresh]="district.value.length === 0"
+              (keyup.Backspace)="emptyText(district.value.length)"
                placeholder="Pick one"
                aria-label="Number"
                matInput
@@ -30,10 +30,9 @@
       <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>搜尋場站名稱或地點</mat-label>
         <input matInput placeholder="ex. 科技大樓" #searchText
-           (input)='sortByType(searchText.value)'
-           (keyup.enter)="sortByType(searchText.value)"
+           (input)='checkSearchText(searchText.value)'
            (keyup.Escape)="refresh(); searchText.value=''"
-           [class.refresh]="searchText.value.length === 0" >
+           (keyup.Backspace)="emptyText(searchText.value.length)" >
       </mat-form-field>
     </form>
 
