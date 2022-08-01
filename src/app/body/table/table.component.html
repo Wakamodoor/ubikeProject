@@ -1,0 +1,32 @@
+<div class="table">
+  <table mat-table class ='dataTable' [dataSource]="data" align="center">
+
+    <ng-container matColumnDef="sarea">
+      <th mat-header-cell *matHeaderCellDef> 行政區 </th>
+      <td mat-cell *matCellDef="let item"> {{item.sarea}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="sna">
+      <th mat-header-cell *matHeaderCellDef> 場站名稱 </th>
+      <td mat-cell *matCellDef="let item"> {{item.sna}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="ar">
+      <th mat-header-cell *matHeaderCellDef> 地點 </th>
+      <td mat-cell *matCellDef="let item"> {{item.ar}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="sbi">
+      <th mat-header-cell *matHeaderCellDef> 可借數量 </th>
+      <td mat-cell *matCellDef="let item"> {{item.sbi}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="bemp">
+      <th mat-header-cell *matHeaderCellDef> 可停數量 </th>
+      <td mat-cell *matCellDef="let item"> {{item.bemp}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>

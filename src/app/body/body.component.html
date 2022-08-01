@@ -1,0 +1,45 @@
+<div class="body">
+
+  <div class="search">
+
+    <!-- searchByArea -->
+    <form class="example-form">
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>選擇行政區</mat-label>
+        <input type="text" #district
+              (input)='check(district.value)'
+              (keyup.enter)="sortByArea(district.value)"
+              (keyup.Escape)="refresh(); district.value='' "
+              [class.refresh]="district.value.length === 0"
+               placeholder="Pick one"
+               aria-label="Number"
+               matInput
+               [formControl]="myControl"
+               [matAutocomplete]="auto"
+               >
+        <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+          <mat-option (click)='sortByArea(district.value)' *ngFor="let option of filteredOptions | async" [value]="option">
+            {{option}}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+    </form>
+
+    <!--searchByType-->
+    <form class="example-form">
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>搜尋場站名稱或地點</mat-label>
+        <input matInput placeholder="ex. 科技大樓" #searchText
+           (input)='sortByType(searchText.value)'
+           (keyup.enter)="sortByType(searchText.value)"
+           (keyup.Escape)="refresh(); searchText.value=''"
+           [class.refresh]="searchText.value.length === 0" >
+      </mat-form-field>
+    </form>
+
+    <!-- <button mat-raised-button color="warn">click</button> -->
+
+  </div>
+
+  <app-table [data]="newData"></app-table>
+</div>
