@@ -1,0 +1,24 @@
+<mat-toolbar class="toolBar">
+  <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item>
+      <mat-icon [style.color]="'#5DB7F2'">favorite</mat-icon>
+      <span>Favorite</span>
+    </button>
+    <button mat-menu-item disabled>
+      <mat-icon>voicemail</mat-icon>
+      <span>Check voice mail</span>
+    </button>
+    <button mat-menu-item>
+      <mat-icon>notifications_off</mat-icon>
+      <span>Disable alerts</span>
+    </button>
+  </mat-menu>
+  <span class="example-spacer"></span>
+  <img src="https://www.youbike.com.tw/region/_next/image/?url=%2Fregion%2Fassets%2Fimages%2Flogo.svg&w=256&q=75" alt="ubikeLogo">
+</mat-toolbar>
+

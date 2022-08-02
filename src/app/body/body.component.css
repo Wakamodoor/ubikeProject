@@ -1,5 +1,9 @@
 .body {
-  background-color: #FFD28E;
+  display: inline-block;
+  background-color: #FFD89C;
+  width: 100%;
+  min-height: 75%;
+  padding-top: 5%;
 }
 
 .search {

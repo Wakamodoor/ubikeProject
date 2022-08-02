@@ -1,5 +1,14 @@
+.table {
+  display: flex;
+  min-height: 75%;
+}
+
 .dataTable {
+  border-collapse: collapse;
   width: 90%;
+  min-height: 500px;
+  justify-content: center;
+  /* background-color: grey; */
 }
 
 
