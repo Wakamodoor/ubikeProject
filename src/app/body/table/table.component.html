@@ -8,7 +8,7 @@
 
     <ng-container matColumnDef="sna">
       <th mat-header-cell *matHeaderCellDef> 場站名稱 </th>
-      <td mat-cell *matCellDef="let item"> {{item.sna}} </td>
+      <td mat-cell *matCellDef="let item"> {{item.sna|slice:11}} </td>
     </ng-container>
 
     <ng-container matColumnDef="ar">

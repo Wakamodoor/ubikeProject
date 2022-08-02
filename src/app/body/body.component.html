@@ -7,10 +7,10 @@
       <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>選擇行政區</mat-label>
         <input type="text" #district
-              (input)='checkDistrict(district.value)'
-              (keyup.enter)="sortByArea(district.value)"
-              (keyup.Escape)="refresh(); district.value='' "
-              (keyup.Backspace)="emptyText(district.value.length)"
+              (input)='isEmpty=false; checkDistrict(district.value, searchText.value) '
+              (keyup.enter)="sortByArea(district.value, searchText.value)"
+              (keyup.Escape)="district.value=''; isEmpty = true; refresh(searchText.value)"
+              (keyup.Backspace)="areaEmptyCheck(district.value.length, searchText.value)"
                placeholder="Pick one"
                aria-label="Number"
                matInput
@@ -18,7 +18,7 @@
                [matAutocomplete]="auto"
                >
         <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
-          <mat-option (click)='sortByArea(district.value)' *ngFor="let option of filteredOptions | async" [value]="option">
+          <mat-option (click)='isEmpty=false; sortByArea(district.value, searchText.value) ' *ngFor="let option of filteredOptions | async" [value]="option">
             {{option}}
           </mat-option>
         </mat-autocomplete>
@@ -31,8 +31,9 @@
         <mat-label>搜尋場站名稱或地點</mat-label>
         <input matInput placeholder="ex. 科技大樓" #searchText
            (input)='checkSearchText(searchText.value)'
-           (keyup.Escape)="refresh(); searchText.value=''"
-           (keyup.Backspace)="emptyText(searchText.value.length)" >
+           (keyup.Escape)="searchText.value=''; fromType = true; refresh() "
+           (keyup.Backspace)="emptyCheck(searchText.value.length, searchText.value)"
+           value=''>
       </mat-form-field>
     </form>
 

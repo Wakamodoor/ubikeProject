@@ -1,8 +1,9 @@
 import { DataService } from './../data.service';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import {FormControl} from '@angular/forms';
+import {ControlContainer, FormControl} from '@angular/forms';
 import {distinct, map, skip, startWith} from 'rxjs/operators';
+import { NumberFormatStyle } from '@angular/common';
 
 
 
@@ -22,7 +23,8 @@ export class BodyComponent implements OnInit {
   orig_data: any
   newData: any
   tempList = []
-
+  orig_tempList = []
+  fromType = false
 
 
   //for sarea search
@@ -32,12 +34,14 @@ export class BodyComponent implements OnInit {
 
   //sort
 
-  re = /[\u4e00-\u9fa5]$/;
+  re = /[\u4e00-\u9fa5_0-9]$/;
+  re2 = /[\u4e00-\u9fa5]$/;
+  isEmpty = true
 
-  checkDistrict(district: string) {
-    if(this.re.test(district)) {
+  checkDistrict(district: string, searchText: string) {
+    if(this.re2.test(district)) {
       // console.log(district)
-      this.sortByArea(district)
+      this.sortByArea(district, searchText)
     }
   }
 
@@ -48,36 +52,93 @@ export class BodyComponent implements OnInit {
     }
   }
 
-  emptyText(len: number) {
+  areaEmptyCheck(len :number, searchText: string) {
     if(len === 0) {
-      this.refresh()
+      this.isEmpty = true
+      this.emptyCheck(len, searchText)
     }
   }
 
-  sortByArea = (district: string) => {
+  emptyCheck(len: number, searchText: string) {
+    if(len === 0 && this.isEmpty === true) {
+      this.refresh(searchText)
+    }else if(this.isEmpty === false) {
+      this.sortByBoth_del(searchText)
+    }
+  }
+
+  sortByBoth_del(searchText: string) {
+    this.tempList = []
+    // console.log(searchText)
+    this.orig_tempList.map((item: any) => {
+      if(((item.sna).includes(searchText)) || ((item.ar).includes(searchText))) {
+        this.tempList.push(item)
+      }
+      return []
+    })
+    this.newData = JSON.parse(JSON.stringify(this.tempList));
+  }
+
+  sortByArea = (district: string, searchText: string) => {
+    this.orig_tempList = []
     this.newData = this.orig_data.filter(item => {
       return (item.sarea).includes(district)
     })
+    this.orig_tempList = JSON.parse(JSON.stringify(this.newData));
+
+    if(searchText !== '' && searchText !== undefined) {
+      console.log(searchText)
+      this.sortByType(searchText)
+    }
   }
 
   sortByType = (searchText: string) => {
-    this.refresh()
     this.tempList = []
-    if(searchText === "") {
-      this.refresh()
-    }else {
-      this.orig_data.map((item: any, idx:number, arr: Array<object>) => {
-        if((item.sna).includes(searchText)) {
+
+    if(this.isEmpty === false) {
+      this.orig_tempList.map((item: any) => {
+        if(((item.sna).includes(searchText)) || ((item.ar).includes(searchText))) {
           this.tempList.push(item)
         }
         return []
       })
+      this.newData = JSON.parse(JSON.stringify(this.tempList));
+
+    }else {
+      // this.refresh()
+      this.orig_data.map((item: any) => {
+        if(((item.sna).includes(searchText)) || ((item.ar).includes(searchText))) {
+          this.tempList.push(item)
+          // console.log(this.tempList)
+        }
+        return []
+      })
+      this.newData = JSON.parse(JSON.stringify(this.tempList));
     }
-    this.newData = JSON.parse(JSON.stringify(this.tempList));
   }
 
-  refresh() {
-    this.newData = JSON.parse(JSON.stringify(this.orig_data));
+  refresh(searchText?: string) {
+    if(this.isEmpty === false) {
+      if(searchText !== '' && searchText !== undefined) {
+        this.sortByType(searchText)
+      }else {
+        this.newData = JSON.parse(JSON.stringify(this.orig_tempList));
+      }
+    }else if(this.fromType === true){
+      this.newData = JSON.parse(JSON.stringify(this.orig_data));
+      this.fromType = false
+      // this.filteredOptions = this.myControl.valueChanges.pipe(
+      //   startWith(''),
+      //   map(value => this._filter(value || '')),
+      // );
+    }else if(this.isEmpty === true){
+      if(searchText !== '' && searchText !== undefined) {
+        // console.log(searchText)
+        this.sortByType(searchText)
+      }else {
+        this.newData = JSON.parse(JSON.stringify(this.orig_data));
+      }
+    }
   }
 
 
