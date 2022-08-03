@@ -1,9 +1,11 @@
 import { DataService } from './../data.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import {ControlContainer, FormControl} from '@angular/forms';
 import {distinct, map, skip, startWith} from 'rxjs/operators';
 import { NumberFormatStyle } from '@angular/common';
+import { TemplatePortal } from '@angular/cdk/portal';
+
 
 
 
@@ -18,7 +20,10 @@ export interface User {
   templateUrl: './body.component.html',
   styleUrls: ['./body.component.css']
 })
-export class BodyComponent implements OnInit {
+export class BodyComponent implements OnInit, OnChanges {
+
+  @Input()
+  is2: boolean
 
   orig_data: any
   newData: any
@@ -152,12 +157,6 @@ export class BodyComponent implements OnInit {
   constructor(private datasvc: DataService) { }
 
   ngOnInit() {
-    this.datasvc.getAPI().subscribe(v => {
-        this.orig_data = v
-        this.newData = v
-    })
-
-
 
 
     this.filteredOptions = this.myControl.valueChanges.pipe(
@@ -166,8 +165,50 @@ export class BodyComponent implements OnInit {
     );
   }
 
+  ngOnChanges() {
+    this.tempList=[]
+    if(this.is2 === true) {
+      this.datasvc.getAPI2().subscribe((v: any) => {
+        this.tempList = v
+        this.tempList.sort((a, b) => {
+          if(a.sarea < b.sarea) {
+            return -1
+          }
+          if(a.sarea > b.sarea) {
+            return 1
+          }
+          return 0
+        })
+        this.orig_data = this.tempList
+        this.newData = this.tempList
+      })
+    }else {
+      this.datasvc.getAPI1().subscribe((v: any) => {
+        Object.keys(v.retVal).forEach((k) => {
+          // console.log(v.retVal[`${k}`])
+          this.tempList.push(JSON.parse(JSON.stringify(v.retVal[`${k}`])))
+        });
+        this.tempList.sort((a, b) => {
+          if(a.sarea < b.sarea) {
+            return -1
+          }
+          if(a.sarea > b.sarea) {
+            return 1
+          }
+          return 0
+        })
+        // console.log(this.tempList)
+        this.newData = this.tempList
+        this.orig_data = this.tempList
+      })
+    }
 
 
 
 
+
+
+  }
 }
+
+

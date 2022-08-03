@@ -1,14 +1,44 @@
 .table {
   display: flex;
   min-height: 75%;
+  padding-bottom: 20px;
 }
 
 .dataTable {
+
   border-collapse: collapse;
   width: 90%;
-  min-height: 500px;
+  /* min-height: ; */
   justify-content: center;
-  /* background-color: grey; */
+  /* background-color: #D9D0C3; */
 }
 
+.mat-header-cell {
+  background-color: #D9D0C3;
+}
 
+.mat-cell {
+  background-color: #F2E8D9;
+}
+
+/* footer_cell of table */
+.dataTable .cell_sarea {
+  width: 10%;
+  text-align: left;
+}
+.dataTable .cell_sna {
+  width: 20%;
+  text-align: left;
+}
+.dataTable .cell_ar {
+  width: 30%;
+  text-align: left;
+}
+.dataTable .cell_sbi {
+  width: 5%;
+  text-align: center;
+}
+.dataTable .cell_bemp {
+  width: 5%;
+  text-align: center;
+}

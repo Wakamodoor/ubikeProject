@@ -20,6 +20,8 @@ import { FooterComponent } from './footer/footer.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatMenuModule} from '@angular/material/menu';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
 
 
@@ -49,7 +51,9 @@ import {MatMenuModule} from '@angular/material/menu';
     FormsModule,
     MatToolbarModule,
     MatIconModule,
-    MatMenuModule
+    MatMenuModule,
+    MatButtonToggleModule,
+    MatSlideToggleModule
   ],
   providers: [],
   bootstrap: [AppComponent]

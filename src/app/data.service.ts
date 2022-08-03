@@ -8,7 +8,10 @@ export class DataService {
 
   constructor(private http: HttpClient) { }
 
-  getAPI() {
+  getAPI2() {
     return this.http.get('https://tcgbusfs.blob.core.windows.net/dotapp/youbike/v2/youbike_immediate.json')
+  }
+  getAPI1() {
+    return this.http.get('https://tcgbusfs.blob.core.windows.net/blobyoubike/YouBikeTP.json')
   }
 }

@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&family=Noto+Sans:ital,wght@1,900&display=swap');
 /* .navbar {
   display: flex;
   width: 100%;
@@ -7,15 +8,84 @@
 } */
 
 .toolBar {
+  display: flex;
   flex-direction: row-reverse;
-  background-color: #D48000;
+  background-color: #736E67;
   position: fixed;
   top: 0%;
+  justify-content: space-between;
 }
 
-.toolBar img {
-  width: 90%;
+.toolBar .logo {
+  /* width: 90%;
   height: 90%;
   margin-left: auto;
   margin-right: auto;
+  overflow: hidden; */
+  width:fit-content;
+  height: 75%;
+  overflow: hidden;
+  margin-top: -6px;
+  float: left;
+  display: block;
+  flex-direction: row;
+  margin-left: 20px;
+  margin-top: 3px;
+}
+
+
+
+.withSlide {
+  margin-right: 5px;
+}
+
+/* slide-toggle */
+::ng-deep .mat-slide-toggle-label {
+  margin-left: 50px;
+  position: relative;
+  top: 1.5px;
+}
+::ng-deep .mat-slide-toggle.mat-checked .mat-slide-toggle-thumb {
+  background-color: black;
+}
+::ng-deep .mat-slide-toggle-bar {
+  background-color: black;
+}
+
+::ng-deep .mat-slide-toggle-thumb {
+  background-color: beige;
+  position: relative;
+  left: -1px;
+}
+::ng-deep .mat-slide-toggle.mat-checked .mat-slide-toggle-bar {
+  background-color: beige;
+}
+
+/* button-toggle */
+::ng-deep .mat-button-toggle-group {
+  display: flex;
+  width: fit-content;
+  border-radius: 100%;
+  background-color: beige;
+  justify-content: space-around;
+  position:relative;
+  left: 15%;
+}
+
+::ng-deep .mat-button-toggle-label-content:hover {
+  display: flex;
+  justify-content: center;
+  font-size: 500;
+  background-color: rgb(93, 183, 242);
+  width: fit-content;
+}
+
+.butoggle {
+  font-family: 'Noto Sans', sans-serif;  color: #34363b;
+  font-weight: 100;
+  text-align: center;
+}
+
+.clickThis {
+  background-color: rgb(93, 183, 242);
 }

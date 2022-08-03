@@ -11,6 +11,9 @@ export class TableComponent implements OnInit {
   @Input()
   data: Array<object>;
 
+  @Input()
+  is2: boolean
+
   //for table
   displayedColumns: string[] = ['sarea','sna','ar','sbi','bemp'];
 

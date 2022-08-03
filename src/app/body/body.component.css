@@ -1,14 +1,18 @@
 .body {
   display: inline-block;
-  background-color: #FFD89C;
+  background-color: #FFF5E6;
   width: 100%;
-  min-height: 75%;
-  padding-top: 5%;
+  min-height: 80%;
+  padding-top: 10%;
 }
 
 .search {
   display: flex;
   justify-content: center;
+}
+
+::ng-deep .mat-form-field {
+  background-color: transparent;
 }
 
 /* .mat-column-demo-position {
