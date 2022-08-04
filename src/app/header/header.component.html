@@ -23,8 +23,11 @@
       <span>Login</span>
     </button>
   </mat-menu>
-  <span class="example-spacer"></span>
-  <img class='logo' src="https://www.youbike.com.tw/region/_next/image/?url=%2Fregion%2Fassets%2Fimages%2Flogo.svg&w=256&q=75" alt="ubikeLogo"
-    routerLink="''">
-</mat-toolbar>
 
+  <mat-button-toggle-group appearance="legacy" name="fontStyle" aria-label="Font Style">
+    <mat-button-toggle class='butoggle' (click)='is2 = false; sendIs2()' [class.clickThis]="is2 === false" value="1.0">Ubike1.0</mat-button-toggle>
+    <mat-button-toggle class='butoggle' (click)='is2 = true; sendIs2()' [class.clickThis]="is2 === true" value="2.0">Ubike2.0</mat-button-toggle>
+  </mat-button-toggle-group>
+  <span class="example-spacer"></span>
+  <img class='logo' src="https://www.youbike.com.tw/region/_next/image/?url=%2Fregion%2Fassets%2Fimages%2Flogo.svg&w=256&q=75" alt="ubikeLogo" (click)="goHome()">
+  </mat-toolbar>

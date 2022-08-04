@@ -16,6 +16,7 @@
   justify-content: space-between;
 }
 
+/* logo */
 .toolBar .logo {
   /* width: 90%;
   height: 90%;
@@ -31,6 +32,10 @@
   flex-direction: row;
   margin-left: 20px;
   margin-top: 3px;
+}
+
+.toolBar .logo:hover {
+  cursor: pointer;
 }
 
 
@@ -89,3 +94,4 @@
 .clickThis {
   background-color: rgb(93, 183, 242);
 }
+

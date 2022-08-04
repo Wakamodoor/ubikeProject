@@ -3,8 +3,9 @@ import { Component, Input, OnChanges, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import {ControlContainer, FormControl} from '@angular/forms';
 import {distinct, map, skip, startWith} from 'rxjs/operators';
-import { NumberFormatStyle } from '@angular/common';
+import { getLocaleDateFormat, NumberFormatStyle } from '@angular/common';
 import { TemplatePortal } from '@angular/cdk/portal';
+import { ActivatedRoute } from '@angular/router';
 
 
 
@@ -20,9 +21,9 @@ export interface User {
   templateUrl: './body.component.html',
   styleUrls: ['./body.component.css']
 })
-export class BodyComponent implements OnInit, OnChanges {
+export class BodyComponent implements OnInit, OnChanges{
 
-  @Input()
+  // @Input()
   is2: boolean
 
   orig_data: any
@@ -38,7 +39,6 @@ export class BodyComponent implements OnInit, OnChanges {
   filteredOptions: Observable<string[]>;
 
   //sort
-
   re = /[\u4e00-\u9fa5_0-9]$/;
   re2 = /[\u4e00-\u9fa5]$/;
   isEmpty = true
@@ -144,6 +144,10 @@ export class BodyComponent implements OnInit, OnChanges {
         this.newData = JSON.parse(JSON.stringify(this.orig_data));
       }
     }
+    this.filteredOptions = this.myControl.valueChanges.pipe(
+      startWith(''),
+      map(value => this._filter(value || '')),
+    );
   }
 
 
@@ -154,10 +158,16 @@ export class BodyComponent implements OnInit, OnChanges {
   }
 
 
-  constructor(private datasvc: DataService) { }
+  constructor(private datasvc: DataService, private route: ActivatedRoute) {
+    this.route.queryParams.subscribe(bool => {
+      this.is2 = JSON.parse(bool['is2'])
+      console.log(this.is2)
+
+      this.getData()
+    })
+  }
 
   ngOnInit() {
-
 
     this.filteredOptions = this.myControl.valueChanges.pipe(
       startWith(''),
@@ -166,8 +176,16 @@ export class BodyComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges() {
+    // console.log(this.is2)
+
+  }
+
+
+  getData = () => {
     this.tempList=[]
+
     if(this.is2 === true) {
+      // console.log(is2)
       this.datasvc.getAPI2().subscribe((v: any) => {
         this.tempList = v
         this.tempList.sort((a, b) => {
@@ -202,12 +220,6 @@ export class BodyComponent implements OnInit, OnChanges {
         this.orig_data = this.tempList
       })
     }
-
-
-
-
-
-
   }
 }
 

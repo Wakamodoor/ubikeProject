@@ -1,0 +1,6 @@
+.loginBody {
+  background-color: var(--body_background);
+  width: var(--body_width);
+  min-height: var(--body_min_height);
+  padding-top: var(--body_padding_top);
+}

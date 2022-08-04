@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, OnChanges } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -7,11 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  is2: boolean
-
-  constructor() { }
-
+  constructor() {
+  }
+  
   ngOnInit(): void {
   }
-
 }

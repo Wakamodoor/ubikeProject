@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HomeModule } from './home/home.module';
 import { MaterialModule } from './material/material.module';
 import { LoginModule } from './login/login.module';
+import { HeaderComponent } from './header/header.component';
 
 
 
@@ -18,6 +19,7 @@ import { LoginModule } from './login/login.module';
 @NgModule({
   declarations: [
     AppComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,
