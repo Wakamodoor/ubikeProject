@@ -1,4 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --body_background: #FFF5E6;
+  --body_width: 100%;
+  --body_min_height: 80%;
+  --body_padding_top: 10%
+}
+
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

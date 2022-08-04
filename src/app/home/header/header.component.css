@@ -46,10 +46,10 @@
   top: 1.5px;
 }
 ::ng-deep .mat-slide-toggle.mat-checked .mat-slide-toggle-thumb {
-  background-color: black;
+  background-color: #736E67;
 }
 ::ng-deep .mat-slide-toggle-bar {
-  background-color: black;
+  background-color: #736E67;
 }
 
 ::ng-deep .mat-slide-toggle-thumb {
