@@ -18,13 +18,13 @@
       <span class="withSlide">Dark Mode</span>
       <mat-slide-toggle class="slide" [(ngModel)]="darkOn"></mat-slide-toggle>
     </button>
-    <button mat-menu-item routerLink="/login" routerLinkActive="active">
+    <button mat-menu-item routerLink="/login" routerLinkActive="active" (click)="isHome = false">
       <mat-icon>login</mat-icon>
       <span>Login</span>
     </button>
   </mat-menu>
 
-  <mat-button-toggle-group appearance="legacy" name="fontStyle" aria-label="Font Style">
+  <mat-button-toggle-group appearance="legacy" name="fontStyle" aria-label="Font Style" *ngIf="isHome === true">
     <mat-button-toggle class='butoggle' (click)='is2 = false; sendIs2()' [class.clickThis]="is2 === false" value="1.0">Ubike1.0</mat-button-toggle>
     <mat-button-toggle class='butoggle' (click)='is2 = true; sendIs2()' [class.clickThis]="is2 === true" value="2.0">Ubike2.0</mat-button-toggle>
   </mat-button-toggle-group>

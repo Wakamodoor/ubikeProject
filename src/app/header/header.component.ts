@@ -15,6 +15,7 @@ export class HeaderComponent implements OnInit {
 
   is2 = true
   darkOn = false
+  isHome = true
 
 
   constructor(private router: Router) { }
