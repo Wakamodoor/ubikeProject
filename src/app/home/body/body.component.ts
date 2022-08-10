@@ -5,7 +5,7 @@ import {ControlContainer, FormControl} from '@angular/forms';
 import {distinct, map, skip, startWith} from 'rxjs/operators';
 import { getLocaleDateFormat, NumberFormatStyle } from '@angular/common';
 import { TemplatePortal } from '@angular/cdk/portal';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 
 
@@ -158,16 +158,19 @@ export class BodyComponent implements OnInit, OnChanges{
   }
 
 
-  constructor(private datasvc: DataService, private route: ActivatedRoute) {
+  constructor(private datasvc: DataService, private route: ActivatedRoute, private router: Router) {
     this.route.queryParams.subscribe(bool => {
       this.is2 = JSON.parse(bool['is2'])
-      console.log(this.is2)
+      // console.log(bool)
 
       this.getData()
     })
   }
 
   ngOnInit() {
+    // this.datasvc.getDatabase().subscribe(rel => {
+    //   console.log(rel)
+    // })
 
     this.filteredOptions = this.myControl.valueChanges.pipe(
       startWith(''),

@@ -1,0 +1,98 @@
+.loginTable {
+  width: 400px;
+  height: 500px;
+  /* outline: 1px solid #000; */
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+
+.account {
+  position: absolute;
+  /* outline: 1px solid #000; */
+  top: 80px;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.password {
+  position: absolute;
+  /* outline: 1px solid #000; */
+  top: 180px;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+h2 {
+  /* outline: 1px solid #000; */
+  text-align: center;
+}
+
+.submit {
+  width: 160px;
+  /* outline: 1px solid #000; */
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  bottom: 180px;
+}
+
+.submit:hover {
+  background: transparent;
+}
+
+.line {
+  /* outline: 1px solid #000; */
+  opacity: 0;
+  width: 0px;
+  height: 100%;
+  border-top: 1px solid #736E67;
+  border-bottom: 1px solid #736E67;
+  border-left: 1px solid transparent;
+  border-right: 1px solid transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  transition: all .5s;
+}
+
+.submit:hover .line {
+  width: 100%;
+  opacity: 1;
+}
+
+.submit ::ng-deep .mat-button-focus-overlay {
+  background: transparent;
+}
+
+.notLogin {
+  width: fit-content;
+  position: absolute;
+  color: rgb(93, 183, 242);
+  transition: all .4s;
+  bottom: 173px;
+}
+
+.signup {
+  /* outline: 1px solid #000; */
+  left: 5px;
+}
+
+.login {
+  /* outline: 1px solid #000; */
+  right: 5px;
+}
+
+.notLogin:hover {
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+}

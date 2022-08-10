@@ -11,6 +11,10 @@ import { HomeModule } from './home/home.module';
 import { MaterialModule } from './material/material.module';
 import { LoginModule } from './login/login.module';
 import { HeaderComponent } from './header/header.component';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideDatabase,getDatabase } from '@angular/fire/database';
+import { AccountInfoComponent } from './account-info/account-info.component';
 
 
 
@@ -20,6 +24,7 @@ import { HeaderComponent } from './header/header.component';
   declarations: [
     AppComponent,
     HeaderComponent,
+    AccountInfoComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,7 +33,9 @@ import { HeaderComponent } from './header/header.component';
     HttpClientModule,
     HomeModule,
     MaterialModule,
-    LoginModule
+    LoginModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideDatabase(() => getDatabase())
   ],
   providers: [],
   bootstrap: [AppComponent]

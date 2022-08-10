@@ -1,0 +1,47 @@
+.accountInfo {
+  background-color: var(--body_background);
+  width: var(--body_width);
+  min-height: var(--body_min_height);
+  padding-top: var(--body_padding_top);
+}
+
+.profile {
+  outline: 1px solid #000;
+  width: 750px;
+  height: 580px;
+  position: absolute;
+  right: 0;
+  left: 0;
+  margin: auto;
+}
+
+.withPicture {
+  outline: 1px solid #000;
+  height: 100%;
+  width: 26.667%;
+  position: relative;
+  border-radius: 30px 2px 2px 30px;
+  background: #F2E8D9;
+
+}
+
+.withPicture img {
+  width: 90%;
+  height:fit-content;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 20px;
+  margin: auto;
+}
+
+.info {
+  position: absolute;
+  outline: 1px solid #000;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 72%;
+  border-radius: 2px 30px 30px 2px;
+  background: #F2E8D9;
+}

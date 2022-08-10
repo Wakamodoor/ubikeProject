@@ -95,6 +95,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "ubikeProject:build:production",
+            "firebaseProject": "taipei-ubike-search-system",
+            "firebaseHostingSite": "taipei-ubike-search-system"
+          }
         }
       }
     }

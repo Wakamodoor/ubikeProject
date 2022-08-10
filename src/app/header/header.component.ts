@@ -1,6 +1,5 @@
-import { getLocaleMonthNames } from '@angular/common';
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -14,23 +13,33 @@ export class HeaderComponent implements OnInit {
   // bool: EventEmitter<boolean>
 
   is2 = true
-  darkOn = false
-  isHome = true
+  darkOn: boolean = false
+  isHome =  true
 
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private route: ActivatedRoute) {
+    // this.route.queryParams.subscribe(bool => {
+    //   // this.isHome = JSON.parse(bool['isHome'])
+    //   console.log(JSON.parse(bool['isHome']))
+    // })
+    // console.log('yoyo')
+  }
 
   ngOnInit(): void {
-    this.goHome()
+    this.router.getCurrentNavigation
+  }
+
+  changeColorMode() {
+    if(this.darkOn === false) {
+      this.darkOn = true
+    }else {
+      this.darkOn = false
+    }
   }
 
   goHome() {
     this.router.navigate(['/home'],{queryParams:{is2: true}})
   }
-
-  // sendIs2() {
-  //   this.bool.emit(this.is2)
-  // }
 
   sendIs2() {
     this.router.navigate(['/home'],{queryParams:{is2: this.is2}})

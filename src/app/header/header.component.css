@@ -7,6 +7,10 @@
   background-color: #D48000;
 } */
 
+.darkMode {
+  
+}
+
 .toolBar {
   display: flex;
   flex-direction: row-reverse;

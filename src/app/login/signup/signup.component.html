@@ -1,6 +1,6 @@
 <div class="loginTable">
-  <h2>Login</h2>
-  <form #form="ngForm" (ngSubmit)="authAccount(form.value)">
+  <h2>Sign up</h2>
+  <form #form="ngForm" (ngSubmit)="createAccount(form.value)">
     <mat-form-field class='account' hintLabel="Max 15 characters" appearance="fill">
       <mat-label>Enter Your Account</mat-label>
       <input matInput #inputAccount maxlength="15" placeholder="abc123" ngModel name="Account" required>
@@ -16,8 +16,7 @@
       <mat-hint align="end">{{inputPassword.value?.length || 0}}/15</mat-hint>
     </mat-form-field>
 
-    <button mat-button class="submit">log in<div class="line"></div></button>
-    <p class="notLogin signup" routerLink="/login/signup">創建帳號</p>
-    <p class="notLogin login" routerLink="/login/reset-password">忘記密碼</p>
+    <button mat-button class="submit">submit<div class="line"></div></button>
+    <p class="login" routerLink="/login/login-page">已有帳號</p>
   </form>
 </div>

@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "taipei-ubike-search-system"
+  },
+  "targets": {
+    "taipei-ubike-search-system": {
+      "hosting": {
+        "ubikeProject": [
+          "taipei-ubike-search-system"
+        ]
+      }
+    }
+  }
+}
