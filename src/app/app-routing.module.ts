@@ -23,11 +23,16 @@ const routes: Routes = [
       {path: 'reset-password', component: ResetPasswordComponent}
   ]},
   {path: 'accountInfo', component: AccountInfoComponent},
-  {path: '**', component: HomeComponent}
+  {path: '**',
+   redirectTo: '/login/login-page',
+   pathMatch: 'full'
+  }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {
+    // enableTracing: true
+  })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
