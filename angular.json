@@ -4,6 +4,14 @@
   "newProjectRoot": "projects",
   "projects": {
     "ubikeProject": {
+      "i18n": {
+        "locales": {
+          "tw": {
+            "translation": "messages.zh.hant.xlf",
+            "baseHref": "/tw/"
+          }
+        }
+      },
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,6 +21,8 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "localize": true,
+            "aot": true,
             "outputPath": "dist/ubike-project",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -29,6 +39,9 @@
             "scripts": []
           },
           "configurations": {
+            "tw": {
+              "localize": ["tw"]
+            },
             "production": {
               "budgets": [
                 {
@@ -66,6 +79,9 @@
           "configurations": {
             "production": {
               "browserTarget": "ubikeProject:build:production"
+            },
+            "tw": {
+              "browserTarget": "ubikeProject:build:tw"
             },
             "development": {
               "browserTarget": "ubikeProject:build:development"

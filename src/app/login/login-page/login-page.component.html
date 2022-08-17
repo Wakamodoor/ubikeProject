@@ -1,14 +1,14 @@
 <div class="loginTable">
-  <h2>Login</h2>
+  <h2 i18n>Login</h2>
   <form #form="ngForm" (ngSubmit)="authAccount(form.value)">
-    <mat-form-field class='account' hintLabel="Max 15 characters" appearance="fill">
-      <mat-label>Enter Your Account</mat-label>
+    <mat-form-field class='account' i18n-hintLabel="@@limitedCount" hintLabel="Max 15 characters" appearance="fill">
+      <mat-label i18n>Enter Your Account</mat-label>
       <input matInput #inputAccount maxlength="15" placeholder="abc123" ngModel name="Account" required>
       <mat-hint align="end">{{inputAccount.value?.length || 0}}/15</mat-hint>
     </mat-form-field>
 
-    <mat-form-field class='password' hintLabel="Max 15 characters" appearance="fill">
-      <mat-label>Enter your password</mat-label>
+    <mat-form-field class='password' i18n-hintLabel="@@limitedCount" hintLabel="Max 15 characters" appearance="fill">
+      <mat-label i18n>Enter your password</mat-label>
       <input matInput #inputPassword [type]="hide ? 'password' : 'text'" maxlength="15" ngModel name="Password" required>
       <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide" type="button">
         <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
@@ -16,7 +16,7 @@
       <mat-hint align="end">{{inputPassword.value?.length || 0}}/15</mat-hint>
     </mat-form-field>
 
-    <button mat-button class="submit">log in<div class="line"></div></button>
+    <button mat-button class="submit"><ng-container i18n="login button|a button use for login@@log-in">log in</ng-container><div class="line"></div></button>
     <p class="notLogin signup" routerLink="/login/signup">創建帳號</p>
     <p class="notLogin login" routerLink="/login/reset-password">忘記密碼</p>
   </form>
