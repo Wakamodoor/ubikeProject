@@ -6,8 +6,12 @@
     "ubikeProject": {
       "i18n": {
         "locales": {
+          "en": {
+            "translation": "src/locale/messages.en.xlf",
+            "baseHref": "/en/"
+          },
           "tw": {
-            "translation": "messages.zh.hant.xlf",
+            "translation": "src/locale/messages.zh.hant.xlf",
             "baseHref": "/tw/"
           }
         }
@@ -21,7 +25,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "localize": true,
+            "localize": false,
             "aot": true,
             "outputPath": "dist/ubike-project",
             "index": "src/index.html",
@@ -39,6 +43,9 @@
             "scripts": []
           },
           "configurations": {
+            "en": {
+              "localize": ["en"]
+            },
             "tw": {
               "localize": ["tw"]
             },
@@ -79,6 +86,9 @@
           "configurations": {
             "production": {
               "browserTarget": "ubikeProject:build:production"
+            },
+            "en": {
+              "browserTarget": "ubikeProject:build:en"
             },
             "tw": {
               "browserTarget": "ubikeProject:build:tw"

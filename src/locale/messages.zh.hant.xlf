@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en-US" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="4915431133669985304" datatype="html">
+        <source>Profile</source>
+        <target>個人資料</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/account-info/account-info.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4268550631192513147" datatype="html">
+        <source>Select District</source>
+        <target>選擇行政區</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/body/body.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7085443820042524312" datatype="html">
+        <source>Search by Site or Street</source>
+        <target>搜尋場站名稱或地點</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/body/body.component.html</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5872084863512973824" datatype="html">
+        <source>ex. Technology Bldg. Sta.</source>
+        <target>ex. 科技大樓站</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/body/body.component.html</context>
+          <context context-type="linenumber">34</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5479876692447898863" datatype="html">
+        <source> Districts </source>
+        <target>行政區</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/body/table/table.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5227751462948803905" datatype="html">
+        <source> Site Name </source>
+        <target>場站名稱</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/body/table/table.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="792416877701909053" datatype="html">
+        <source> Location </source>
+        <target>地點</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/body/table/table.component.html</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5296439190724480068" datatype="html">
+        <source> take </source>
+        <target>可借數量</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/body/table/table.component.html</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5971604406210664671" datatype="html">
+        <source> return </source>
+        <target>可還數量</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/body/table/table.component.html</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2454050363478003966" datatype="html">
+        <source>Login</source>
+        <target>登入帳號</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/login/login-page/login-page.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2238178870715138474" datatype="html">
+        <source>Enter Your Account</source>
+        <target>請輸入您的帳號</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/login/login-page/login-page.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2772023564304193657" datatype="html">
+        <source>Enter your password</source>
+        <target>請輸入您的密碼</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/login/login-page/login-page.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="log-in" datatype="html">
+        <source>log in<x id="START_TAG_DIV" ctype="x-div" equiv-text="&lt;div class=&quot;line&quot;&gt;"/><x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/></source>
+        <target>登入</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/login/login-page/login-page.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="limitedCount" datatype="html">
+        <source>Max 15 characters</source>
+        <target>最多15個字元</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/login/login-page/login-page.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5907476126990913307" datatype="html">
+        <source>Create account</source>
+        <target>創建帳號</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/login/login-page/login-page.component.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8264044238565501678" datatype="html">
+        <source>Forgot password</source>
+        <target>忘記密碼</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/login/login-page/login-page.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4915431133669985304" datatype="html">
+        <source>Profile</source>
+        <target>個人資料</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/account-info/account-info.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1332214193580122293" datatype="html">
+        <source>Account Info</source>
+        <target>個人資料</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/header/header.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5787671382322865445" datatype="html">
+        <source>Favorite</source>
+        <target>收藏站點</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/header/header.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3279636347259347513" datatype="html">
+        <source>Dark Mode</source>
+        <target>深夜模式</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/header/header.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7866203511624349217" datatype="html">
+        <source>log in<x id="START_TAG_DIV" ctype="x-div" equiv-text="&lt;div class=&quot;line&quot;&gt;"/><x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/></source>
+        <target>登入帳號</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/header/header.component.html</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

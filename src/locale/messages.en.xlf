@@ -4,16 +4,13 @@
     <body>
       <trans-unit id="2454050363478003966" datatype="html">
         <source>Login</source>
-        <target>登入帳號</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/login/login-page/login-page.component.html</context>
           <context context-type="linenumber">2</context>
         </context-group>
       </trans-unit>
-
       <trans-unit id="2238178870715138474" datatype="html">
         <source>Enter Your Account</source>
-        <target>請輸入您的帳號</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/login/login-page/login-page.component.html</context>
           <context context-type="linenumber">5</context>
@@ -21,30 +18,12 @@
       </trans-unit>
       <trans-unit id="2772023564304193657" datatype="html">
         <source>Enter your password</source>
-        <target>請輸入您的密碼</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/login/login-page/login-page.component.html</context>
           <context context-type="linenumber">11</context>
         </context-group>
       </trans-unit>
-      <!-- <trans-unit id="7866203511624349217" datatype="html"> -->
 
-      <trans-unit id="log-in" datatype="html">
-        <source>log in<x id="START_TAG_DIV" ctype="x-div" equiv-text="&lt;div class=&quot;line&quot;&gt;"/><x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/></source>
-        <target>登入</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/login/login-page/login-page.component.html</context>
-          <context context-type="linenumber">19</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="limitedCount" datatype="html">
-        <source>Max 15 characters</source>
-        <target>最多15個字元</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/login/login-page/login-page.component.html</context>
-          <context context-type="linenumber">10</context>
-        </context-group>
-      </trans-unit>
     </body>
   </file>
 </xliff>
