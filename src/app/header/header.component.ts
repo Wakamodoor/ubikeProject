@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute, ActivationEnd } from '@angular/router';
+import { filter, Observable } from 'rxjs';
 
 
 @Component({
@@ -14,7 +15,7 @@ export class HeaderComponent implements OnInit {
 
   is2 = true
   darkOn: boolean = false
-  isHome =  true
+  isHome =  false
 
 
   constructor(private router: Router, private route: ActivatedRoute) {
@@ -23,19 +24,27 @@ export class HeaderComponent implements OnInit {
     //   console.log(JSON.parse(bool['isHome']))
     // })
     // console.log('yoyo')
+
+    (this.router.events.pipe(filter(event => event instanceof ActivationEnd)) as Observable<ActivationEnd>).subscribe(router => {
+      if(router.snapshot.component.name === 'HomeComponent') {
+        this.isHome = true
+      }else {
+        this.isHome = false
+      }
+    })
   }
 
   ngOnInit(): void {
-    this.router.getCurrentNavigation
+    this.is2 = true
   }
 
-  changeColorMode() {
-    if(this.darkOn === false) {
-      this.darkOn = true
-    }else {
-      this.darkOn = false
-    }
-  }
+  // changeColorMode() {
+  //   if(this.darkOn === false) {
+  //     this.darkOn = true
+  //   }else {
+  //     this.darkOn = false
+  //   }
+  // }
 
   goHome() {
     this.router.navigate(['/home'],{queryParams:{is2: true}})

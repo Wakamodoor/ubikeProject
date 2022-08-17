@@ -56,8 +56,8 @@ export class DataService {
         if(account === this.data[i].account) {
           if(password === this.data[i].password) {
             // this.router.navigate(['/header'], {queryParams: {isHome: true}})
-            this.router.navigate(['/accountInfo'], {queryParams: {accountID: i}})
-            this.router.navigate(['/home'],{queryParams:{is2: true, isHome: true}})
+            // this.router.navigate(['/accountInfo'], {queryParams: {accountID: i}})
+            this.router.navigate(['/home'],{queryParams:{is2: true}})
             break
           }
         }
