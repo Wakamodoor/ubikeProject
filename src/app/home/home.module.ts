@@ -1,3 +1,4 @@
+import { SharedModule } from 'src/app/shared/shared.module';
 import { RouterModule } from '@angular/router';
 // import { MaterialModule } from './../material/material.module';
 import { AppModule } from './../app.module';
@@ -19,7 +20,8 @@ import { MaterialModule } from '../material/material.module'
   imports: [
     CommonModule,
     MaterialModule,
-    RouterModule
+    RouterModule,
+    SharedModule
   ],
   exports: [
     HomeComponent

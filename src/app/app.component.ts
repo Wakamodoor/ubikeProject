@@ -1,3 +1,5 @@
+import { LanguageService } from './../assets/service/languageService/language.service';
+
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -28,7 +30,9 @@ export class AppComponent implements OnInit{
   is2 = true
   darkOn: boolean
 
-  constructor(private router: Router) {  }
+  constructor(private router: Router, private languageService: LanguageService) {
+    this.languageService.setInitState();
+  }
 
   ngOnInit(): void {
     // this.router.navigate([''])
