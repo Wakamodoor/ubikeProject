@@ -35,10 +35,10 @@ export class AppComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    // this.router.navigate([''])
+    this.router.navigate([''])
   }
 
-  sendIs2() {
-    this.router.navigate(['/home'],{queryParams:{is2: this.is2}})
-  }
+  // sendIs2() {
+  //   this.router.navigate(['/home'],{queryParams:{is2: this.is2}})
+  // }
 }

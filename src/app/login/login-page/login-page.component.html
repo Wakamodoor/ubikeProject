@@ -1,14 +1,14 @@
 <div class="loginTable">
-  <h2>{{'login-page.title' | translate }}</h2>
+  <h2>{{ 'login-page.title' | translate }}</h2>
   <form #form="ngForm" (ngSubmit)="authAccount(form.value)">
-    <mat-form-field class='account' hintLabel="Max 15 characters" appearance="fill">
-      <mat-label>Enter Your Account</mat-label>
+    <mat-form-field class='account' hintLabel="{{'login-page.Max 15 characters' | translate}}" appearance="fill">
+      <mat-label>{{'login-page.Enter your account'| translate}}</mat-label>
       <input matInput #inputAccount maxlength="15" placeholder="abc123" ngModel name="Account" required>
       <mat-hint align="end">{{inputAccount.value?.length || 0}}/15</mat-hint>
     </mat-form-field>
 
-    <mat-form-field class='password' hintLabel="Max 15 characters" appearance="fill">
-      <mat-label>Enter your password</mat-label>
+    <mat-form-field class='password' hintLabel="{{'login-page.Max 15 characters' | translate}}" appearance="fill">
+      <mat-label>{{'login-page.Enter your password'| translate}}</mat-label>
       <input matInput #inputPassword [type]="hide ? 'password' : 'text'" maxlength="15" ngModel name="Password" required>
       <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide" type="button">
         <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
@@ -16,8 +16,8 @@
       <mat-hint align="end">{{inputPassword.value?.length || 0}}/15</mat-hint>
     </mat-form-field>
 
-    <button mat-button class="submit"><ng-container>log in</ng-container><div class="line"></div></button>
-    <p class="notLogin signup" routerLink="/login/signup">Create account</p>
-    <p class="notLogin login" routerLink="/login/reset-password">Forgot password</p>
+    <button mat-button class="submit">{{'login-page.log in'| translate}}<div class="line"></div></button>
+    <p class="notLogin signup" routerLink="/login/signup">{{'login-page.Create account'| translate}}</p>
+    <p class="notLogin login" routerLink="/login/reset-password">{{'login-page.Forgot password'| translate}}</p>
   </form>
 </div>

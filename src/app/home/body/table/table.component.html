@@ -1,38 +1,67 @@
 <div class="table">
   <table mat-table class ='dataTable' [dataSource]="data" align="center">
+    <ng-container [ngSwitch]="lang">
+      <ng-container *ngSwitchCase="'zh-tw'">
+        <ng-container matColumnDef="sarea">
+          <th mat-header-cell *matHeaderCellDef> {{'table.Districts'| translate}} </th>
+          <!-- <th mat-header-cell *matHeaderCellDef> 行政區 </th> -->
+          <td mat-cell class='tablecell cell_sarea' *matCellDef="let item"> {{item.sarea}} </td>
+        </ng-container>
 
-    <ng-container matColumnDef="sarea">
-      <th mat-header-cell *matHeaderCellDef i18n> Districts </th>
-      <!-- <th mat-header-cell *matHeaderCellDef> 行政區 </th> -->
-      <td mat-cell class='tablecell cell_sarea' *matCellDef="let item"> {{item.sarea}} </td>
-    </ng-container>
+        <ng-container matColumnDef="sna">
+          <th mat-header-cell *matHeaderCellDef> {{'table.Site Name'| translate}} </th>
+          <!-- <th mat-header-cell *matHeaderCellDef i18n> 場站名稱 </th> -->
+          <ng-container *ngIf="is2 === true">
+            <td mat-cell class='tablecell cell_sna' *matCellDef="let item"> {{item.sna|slice:11}} </td>
+          </ng-container>
+          <ng-container *ngIf="is2 === false">
+            <td mat-cell class='tablecell cell_sna' *matCellDef="let item"> {{item.sna}} </td>
+          </ng-container>
+        </ng-container>
 
-    <ng-container matColumnDef="sna">
-      <th mat-header-cell *matHeaderCellDef i18n> Site Name </th>
-      <!-- <th mat-header-cell *matHeaderCellDef i18n> 場站名稱 </th> -->
-      <ng-container *ngIf="is2 === true">
-        <td mat-cell class='tablecell cell_sna' *matCellDef="let item"> {{item.sna|slice:11}} </td>
+        <ng-container matColumnDef="ar">
+          <th mat-header-cell *matHeaderCellDef> {{'table.Location'| translate}}</th>
+          <!-- <th mat-header-cell *matHeaderCellDef> 地點 </th> -->
+          <td mat-cell class='tablecell cell_ar' *matCellDef="let item"> {{item.ar}} </td>
+        </ng-container>
       </ng-container>
-      <ng-container *ngIf="is2 === false">
-        <td mat-cell class='tablecell cell_sna' *matCellDef="let item"> {{item.sna}} </td>
+
+      <ng-container *ngSwitchCase="'en'">
+        <ng-container matColumnDef="sarea">
+          <th mat-header-cell *matHeaderCellDef> {{'table.Districts'| translate}} </th>
+          <!-- <th mat-header-cell *matHeaderCellDef> 行政區 </th> -->
+          <td mat-cell class='tablecell cell_sarea' *matCellDef="let item"> {{item.sareaen}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="sna">
+          <th mat-header-cell *matHeaderCellDef> {{'table.Site Name'| translate}} </th>
+          <!-- <th mat-header-cell *matHeaderCellDef i18n> 場站名稱 </th> -->
+          <ng-container *ngIf="is2 === true">
+            <td mat-cell class='tablecell cell_sna' *matCellDef="let item"> {{item.snaen|slice:11}} </td>
+          </ng-container>
+          <ng-container *ngIf="is2 === false">
+            <td mat-cell class='tablecell cell_sna' *matCellDef="let item"> {{item.snaen}} </td>
+          </ng-container>
+        </ng-container>
+
+        <ng-container matColumnDef="ar">
+          <th mat-header-cell *matHeaderCellDef> {{'table.Location'| translate}}</th>
+          <!-- <th mat-header-cell *matHeaderCellDef> 地點 </th> -->
+          <td mat-cell class='tablecell cell_ar' *matCellDef="let item"> {{item.aren}} </td>
+        </ng-container>
       </ng-container>
-
     </ng-container>
 
-    <ng-container matColumnDef="ar">
-      <th mat-header-cell *matHeaderCellDef i18n> Location </th>
-      <!-- <th mat-header-cell *matHeaderCellDef> 地點 </th> -->
-      <td mat-cell class='tablecell cell_ar' *matCellDef="let item"> {{item.ar}} </td>
-    </ng-container>
+
 
     <ng-container matColumnDef="sbi">
-      <th mat-header-cell *matHeaderCellDef class="take-header" i18n> take </th>
+      <th mat-header-cell *matHeaderCellDef class="take-header"> {{'table.take'| translate}} </th>
       <!-- <th mat-header-cell *matHeaderCellDef> 可借數量 </th> -->
       <td mat-cell class='tablecell cell_sbi' *matCellDef="let item"> {{item.sbi}} </td>
     </ng-container>
 
     <ng-container matColumnDef="bemp">
-      <th mat-header-cell *matHeaderCellDef class="return-header" i18n> return </th>
+      <th mat-header-cell *matHeaderCellDef class="return-header"> {{'table.return'| translate}}</th>
       <!-- <th mat-header-cell *matHeaderCellDef> 可停數量 </th> -->
       <td mat-cell class='tablecell cell_bemp' *matCellDef="let item"> {{item.bemp}} </td>
     </ng-container>

@@ -1,3 +1,4 @@
+import { LanguageService } from './../../assets/service/languageService/language.service';
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Router, ActivatedRoute, ActivationEnd } from '@angular/router';
 import { filter, Observable } from 'rxjs';
@@ -16,9 +17,10 @@ export class HeaderComponent implements OnInit {
   is2 = true
   darkOn: boolean = false
   isHome =  false
+  lang: string
 
 
-  constructor(private router: Router, private route: ActivatedRoute) {
+  constructor(private router: Router, private route: ActivatedRoute, private language: LanguageService) {
     // this.route.queryParams.subscribe(bool => {
     //   // this.isHome = JSON.parse(bool['isHome'])
     //   console.log(JSON.parse(bool['isHome']))
@@ -52,6 +54,10 @@ export class HeaderComponent implements OnInit {
 
   sendIs2() {
     this.router.navigate(['/home'],{queryParams:{is2: this.is2}})
+  }
+
+  changeLanguage() {
+    this.language.setLang(this.lang);
   }
 
 }

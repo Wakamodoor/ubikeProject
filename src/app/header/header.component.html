@@ -7,26 +7,35 @@
   <mat-menu #menu="matMenu">
     <button mat-menu-item routerLink="/accountInfo">
       <mat-icon>account_circle</mat-icon>
-      <span i18n>Account Info</span>
+      <span class="menuWords">{{'menu.Account Info'| translate}}</span>
     </button>
     <button mat-menu-item>
       <mat-icon [style.color]="'#5DB7F2'">favorite</mat-icon>
-      <span i18n>Favorite</span>
+      <span class="menuWords">{{'menu.Favorite'| translate}}</span>
     </button>
     <button mat-menu-item>
       <mat-icon>palette</mat-icon>
-      <span class="withSlide" i18n>Dark Mode</span>
+      <span class="withSlide menuWords">{{"menu.Dark Mode"| translate}}</span>
       <mat-slide-toggle class="slide"></mat-slide-toggle>
     </button>
     <button mat-menu-item routerLink="/login" routerLinkActive="active" (click)="isHome = false">
       <mat-icon>login</mat-icon>
-      <span i18n>Login</span>
+      <span class="menuWords">{{"menu.Login"| translate}}</span>
     </button>
   </mat-menu>
 
+  <button mat-icon-button [matMenuTriggerFor]="beforeMenu" class="langMenu">
+    <mat-icon>language</mat-icon>
+  </button>
+  <mat-menu #beforeMenu="matMenu" xPosition="before">
+    <button mat-menu-item (click)="lang='zh-tw';changeLanguage()">Chinese(Traditional)</button>
+    <button mat-menu-item (click)="lang='en';changeLanguage()">English</button>
+  </mat-menu>
+
+
   <mat-button-toggle-group appearance="legacy" name="fontStyle" aria-label="Font Style" *ngIf="isHome === true">
-    <mat-button-toggle class='butoggle' (click)='is2 = false; sendIs2(); isHome = true' [class.clickThis]="is2 === false" value="1.0">Ubike1.0</mat-button-toggle>
-    <mat-button-toggle class='butoggle' (click)='is2 = true; sendIs2(); isHome = true' [class.clickThis]="is2 === true" value="2.0">Ubike2.0</mat-button-toggle>
+    <mat-button-toggle class='butoggle' (click)='is2 = false; sendIs2()' [class.clickThis]="is2 === false" value="1.0">Ubike1.0</mat-button-toggle>
+    <mat-button-toggle class='butoggle' (click)='is2 = true; sendIs2()' [class.clickThis]="is2 === true" value="2.0">Ubike2.0</mat-button-toggle>
   </mat-button-toggle-group>
   <span class="example-spacer"></span>
   <img class='logo' src="https://www.youbike.com.tw/region/_next/image/?url=%2Fregion%2Fassets%2Fimages%2Flogo.svg&w=256&q=75" alt="ubikeLogo" (click)="goHome(); isHome = true">

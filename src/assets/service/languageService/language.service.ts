@@ -21,7 +21,7 @@ export class LanguageService {
   setInitState() {
     // this.translateService.setDefaultLang('zh-tw')
     this.translateService.use('zh-tw');
-    console.log(this.translateService.currentLang)
+
     // this.translateService.addLangs(['en', 'zh-tw']);
     // // 根據使用者的瀏覽器語言設定，如果是中文就顯示中文，否則都顯示英文
     // // 繁體/簡體中文代碼都是zh
@@ -39,4 +39,14 @@ export class LanguageService {
   getCurrentLang() {
     return this.translateService.currentLang
   }
+
+  setLang(lang: string) {
+    this.translateService.use(lang)
+  }
+
+  listeningLangChange() {
+    return this.translateService.onLangChange
+  }
+
+
 }

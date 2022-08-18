@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&family=Noto+Sans:ital,wght@1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&family=Noto+Sans+TC&family=Noto+Sans:ital,wght@1,900&display=swap');
+
 /* .navbar {
   display: flex;
   width: 100%;
@@ -8,7 +10,7 @@
 } */
 
 .darkMode {
-  
+
 }
 
 .toolBar {
@@ -48,6 +50,11 @@
   margin-right: 5px;
 }
 
+.menuWords {
+  font-family: 'Noto Sans TC', sans-serif;
+  font-weight: 500;
+}
+
 /* slide-toggle */
 ::ng-deep .mat-slide-toggle-label {
   margin-left: 50px;
@@ -74,11 +81,10 @@
 ::ng-deep .mat-button-toggle-group {
   display: flex;
   width: fit-content;
-  border-radius: 100%;
   background-color: beige;
   justify-content: space-around;
   position:relative;
-  left: 15%;
+  left: 230px;
 }
 
 ::ng-deep .mat-button-toggle-label-content:hover {
@@ -99,3 +105,10 @@
   background-color: rgb(93, 183, 242);
 }
 
+.langMenu {
+  position: absolute;
+  top: 0;
+  bottom: -3px;
+  margin: auto;
+  right: 55px;
+}

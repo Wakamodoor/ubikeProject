@@ -1,5 +1,29 @@
 {
-  "login-page":{
-    "title": "登入"
+  "login-page": {
+    "title": "登入帳號",
+    "Max 15 characters": "最多15個字元",
+    "Enter your account": "輸入帳號",
+    "Enter your password": "輸入密碼",
+    "log in": "登入",
+    "Create account": "創建帳號",
+    "Forgot password": "忘記密碼"
+  },
+  "table": {
+    "Districts": "行政區",
+    "Site Name": "場站名稱",
+    "Location": "地點",
+    "take": "可借數量",
+    "return": "可停數量"
+  },
+  "search": {
+    "Select District": "選擇行政區",
+    "Search by Site or Street": "搜尋場站名稱或地點",
+    "ex. Technology Bldg. Sta.": "ex. 科技大樓站"
+  },
+  "menu": {
+    "Account Info": "用戶資訊",
+    "Favorite": "收藏站點",
+    "Dark Mode": "深夜模式",
+    "Login": "會員登入"
   }
 }

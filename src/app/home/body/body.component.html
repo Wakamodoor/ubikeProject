@@ -5,7 +5,7 @@
     <!-- searchByArea -->
     <form class="example-form">
       <mat-form-field class="example-full-width" appearance="fill">
-        <mat-label i18n>Select District</mat-label>
+        <mat-label>{{'search.Select District'| translate}}</mat-label>
         <!-- <mat-label>選擇行政區</mat-label> -->
         <input type="text" #district
               (input)='isEmpty=false; checkDistrict(district.value, searchText.value) '
@@ -29,9 +29,9 @@
     <!--searchByType-->
     <form class="example-form">
       <mat-form-field class="example-full-width" appearance="fill">
-        <mat-label i18n>Search by Site or Street</mat-label>
+        <mat-label>{{'search.Search by Site or Street'| translate}}</mat-label>
         <!-- <mat-label>搜尋場站名稱或地點</mat-label> -->
-        <input matInput i18n-placeholder placeholder="ex. Technology Bldg. Sta." #searchText
+        <input matInput placeholder="{{'search.ex. Technology Bldg. Sta.'| translate}}" #searchText
            (input)='checkSearchText(searchText.value)'
            (keyup.Escape)="searchText.value=''; fromType = true; refresh() "
            (keyup.Backspace)="emptyCheck(searchText.value.length, searchText.value)"
@@ -43,5 +43,5 @@
 
   </div>
 
-  <app-table [data]="newData" [is2]="is2"></app-table>
+  <app-table [data]="newData" [is2]="is2" [lang]="lang"></app-table>
 </div>

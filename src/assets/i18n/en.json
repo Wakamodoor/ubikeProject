@@ -1,0 +1,29 @@
+{
+  "login-page":{
+    "title": "Login",
+    "Max 15 characters": "Max 15 characters",
+    "Enter your account": "Enter your account",
+    "Enter your password": "Enter your password",
+    "log in": "log in",
+    "Create account": "Create account",
+    "Forgot password": "Forgot password"
+  },
+  "table" :{
+    "Districts": "Districts",
+    "Site Name": "Site Name",
+    "Location": "Location",
+    "take": "take",
+    "return": "return"
+  },
+  "search": {
+    "Select District": "Select District",
+    "Search by Site or Street": "Search by Site or Street",
+    "ex. Technology Bldg. Sta.": "ex. Technology Bldg. Sta."
+  },
+  "menu": {
+    "Account Info": "Account Info",
+    "Favorite": "Favorite",
+    "Dark Mode": "Dark Mode",
+    "Login": "Login"
+  }
+}

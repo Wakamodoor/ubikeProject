@@ -12,12 +12,16 @@ export class TableComponent implements OnInit {
   data: Array<object>;
 
   @Input()
-  is2: boolean
+  is2: boolean;
+
+  @Input()
+  lang: string;
 
   //for table
   displayedColumns: string[] = ['sarea','sna','ar','sbi','bemp'];
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
